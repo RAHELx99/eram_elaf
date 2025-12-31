@@ -55,11 +55,11 @@
 <body>
     <div id="error-log"></div>
     <div id="ui-layer">
-        <div id="status" class="badge">🎄 Giang Sinh An Lanh 🎄</div>
-        <div class="guide">
-            🖐 <b>Xòe:</b> Bung Quà & Đèn &nbsp;|&nbsp; 👌 <b>Pinch:</b> Xem ảnh &nbsp;|&nbsp; ✊ <b>Nắm:</b> Thu cây
+        <div id="status" class="badge">🎄 Eram & Elaf 🎄</div>
+       <div class="guide">
+    🖐 <b>open your hand:</b> Separate the photos&nbsp;|&nbsp; 👌 <b>Dip your finger:</b> Image enlargement &nbsp;|&nbsp; ✊ <b>Dip your hand:</b> Collecting the tree 
         </div>
-        <button id="btnStart" onclick="startSystem()">BẮT ĐẦU</button>
+        <button id="btnStart" onclick="startSystem()">Start</button>
     </div>
 
     <div id="canvas-container"></div>
@@ -258,7 +258,7 @@
             ctx.font = 'bold italic 90px "Times New Roman"';
             ctx.fillStyle = '#FFD700'; ctx.textAlign = 'center';
             ctx.shadowColor = "#FF0000"; ctx.shadowBlur = 40; 
-            ctx.fillText("MERRY CHRISTMAS", 512, 130);
+            ctx.fillText("HAPPY NEW YEAR", 512, 130);
             
             const tex = new THREE.CanvasTexture(canvas);
             const mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, blending: THREE.AdditiveBlending });
@@ -414,17 +414,17 @@
 
                     if (avgDist < 0.25) { 
                         state = 'TREE'; 
-                        statusDiv.innerText = "✊ Thu Cây Thông"; statusDiv.style.color = "#FFD700";
+                        statusDiv.innerText = "✊ Dip your hand"; statusDiv.style.color = "#FFD700";
                     } else if (pinchDist < 0.05) {
                         state = 'PHOTO';
-                        statusDiv.innerText = "👌 Xem Ảnh"; statusDiv.style.color = "#00FFFF";
+                        statusDiv.innerText = "👌 Dip your finger"; statusDiv.style.color = "#00FFFF";
                     } else {
                         state = 'EXPLODE'; 
-                        statusDiv.innerText = "🖐 Bung Quà & Ảnh"; statusDiv.style.color = "#FFA500";
+                        statusDiv.innerText = "🖐 open your hand"; statusDiv.style.color = "#FFA500";
                     }
                 } else {
                     state = 'TREE'; 
-                    statusDiv.innerText = "🎄 Giang Sinh An Lanh 🎄"; statusDiv.style.color = "#FFF";
+                    statusDiv.innerText = "🎄 Eram & Elaf 🎄"; statusDiv.style.color = "#FFF";
                 }
             });
 
